@@ -52,6 +52,40 @@ public class App {
         }
     }
 
+
+    static int Booking(){
+        DateTimeFormatter formatter;
+        LocalDate Indate ;
+        LocalDate Outdate ;
+        LocalTime Intime;
+        LocalTime Outtime ;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the Customer_name:");
+        String Name = scanner.nextLine();
+        System.out.println("");
+        System.out.print("No Of Guests:");
+        int Guests = Integer.parseInt(scanner.nextLine());
+        System.out.println("");
+        System.out.print("Check_in Date:");
+        String IndateString = scanner.nextLine();
+        formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        Indate = LocalDate.parse(IndateString, formatter);
+        System.out.print("Check_in Time:");
+        String IntimeString = scanner.nextLine();
+        formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+        Intime = LocalTime.parse(IntimeString, formatter);
+        System.out.print("Check_out Date:");
+        String OutdateString = scanner.nextLine();
+        formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        Outdate = LocalDate.parse(OutdateString, formatter);
+        System.out.print("Check_out Time:");
+        String OuttimeString = scanner.nextLine();
+        formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+        Outtime = LocalTime.parse(OuttimeString, formatter);
+        return Guests ;
+    }
+
+
     private static void customerRegistration(Connection conn, Scanner scanner) throws SQLException {
         System.out.println("Customer Registration");
         System.out.print("Enter Name: ");
